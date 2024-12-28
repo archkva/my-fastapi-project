@@ -57,18 +57,7 @@ def get_stats(short_id: str, db: Session = Depends(get_db)):
         "full_url": url_item.full_url
     }
 
-@app.post("/delete/{short_id}")
-def delete_short(short_id: str, db: Session = Depends(get_db)):
-    url_item = db.query(URLItem).filter(URLItem.short_id == short_id).first()
-    if not url_item:
-        raise HTTPException(status_code=404, detail="Короткая ссылка не найдена")
-    else:
-        to_remove = {"short_id": url_item.short_id,
-                     "full_url": url_item.full_url}
-        db.remove(url_item)
-        return to_remove
-
-@app.post("/delete/{short_id}")
+@app.delete("/{short_id}")
 def delete_short(short_id: str, db: Session = Depends(get_db)):
     url_item = db.query(URLItem).filter(URLItem.short_id == short_id).first()
     if not url_item:
