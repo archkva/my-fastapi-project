@@ -27,19 +27,19 @@
 1. Создание задачи:
 POST /items
 Тело запроса:
-```{
+{
   "title": "Walk the dog",
   "description": "Take the dog for a walk",
   "completed": false
 }```
 
-2. Получение списка задач:
+3. Получение списка задач:
 GET /items
-3. Получение задачи по ID:
+4. Получение задачи по ID:
 GET /items/{item_id}
-4. Обновление задачи по ID:
+5. Обновление задачи по ID:
 PUT /items/{item_id}:
-5. Удаление задачи по ID:
+6. Удаление задачи по ID:
 DELETE /items/{item_id}
 
 
