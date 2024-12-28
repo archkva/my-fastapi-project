@@ -27,11 +27,13 @@
 1. Создание задачи:
 POST /items
 Тело запроса:
+```
 {
   "title": "Walk the dog",
   "description": "Take the dog for a walk",
   "completed": false
-}```
+}
+```
 
 3. Получение списка задач:
 GET /items
@@ -67,9 +69,11 @@ DELETE /items/{item_id}
 1. Генерирование сокращенной ссылки:
 POST /shorten
 Тело запроса:
-```{
+```
+{
   "url": "https://github.com/archkva/my-fastapi-project"
-}```
+}
+```
 
 2. Перенаправление на полный URL, если он существует:
 GET /items
